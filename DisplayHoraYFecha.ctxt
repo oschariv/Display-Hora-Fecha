@@ -1,7 +1,7 @@
 #BlueJ class context
-comment0.params=
-comment0.target=DisplayHoraYFecha()
-comment0.text=\n\ Constructor\ for\ objects\ of\ class\ DisplayHoraYFecha\n
+comment0.params=soloHora\ soloFecha
+comment0.target=DisplayHoraYFecha(boolean,\ boolean)
+comment0.text=\n\ Constructor\ for\ objects\ of\ class\ DisplayHoraYFecha.\n\ Seleccionar\ true\ o\ false\ para\ los\ parametros.\n\ true\ -\ true\ ->\ muestra\ fecha\ y\ hora.\n\ true\ -\ false\ ->\ solo\ muestra\ la\ hora.\n\ false\ -\ true\ ->\ solo\ muestra\ la\ fecha.\n\ false\ -\ false\ ->\ no\ muestra\ nada.\n
 comment1.params=
 comment1.target=void\ avanzarMomento()
 comment1.text=\n\ Metodo\ avanzarMomento\n
