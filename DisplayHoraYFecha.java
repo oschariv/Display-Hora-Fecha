@@ -34,21 +34,7 @@ public class DisplayHoraYFecha
         anno = new DisplayDosDigitos(100);
         
         mostrarHora = soloHora;
-        mostrarFecha = soloFecha;
-        
-        if (mostrarHora == true && mostrarFecha == true) {
-            System.out.println("Se mostrara fecha y hora.");
-        }
-        else if (mostrarHora == true && mostrarFecha == false) {
-            System.out.println("Se mostrara solo la hora.");
-        }
-        else if (mostrarHora == false && mostrarFecha == true) {
-            System.out.println("Se mostrara sola la fecha.");
-        }
-        else {
-            System.out.println("No se mostra nada.");
-        }
-        
+        mostrarFecha = soloFecha;       
     }
     
     
@@ -97,7 +83,7 @@ public class DisplayHoraYFecha
         }
     }
         
-     public String getMomento()
+    public String getMomento()
     {
         String momento;
         
@@ -110,6 +96,29 @@ public class DisplayHoraYFecha
             momento = horas.getDisplayValue() + ":" + minutos.getDisplayValue();
         }
         else if (mostrarHora == false && mostrarFecha == true) {
+            momento = dia.getValorDelDisplay() + "/" + mes.getValorDelDisplay() 
+                + "/" + anno.getValorDelDisplay();
+        }
+        else{
+            momento = "";
+        }
+        
+        return momento; 
+    }
+    
+    public String getMomento(boolean horaMostrar, boolean fechaMostrar)
+    {
+        String momento;
+        
+        if (horaMostrar == true && fechaMostrar == true) {
+            momento = horas.getDisplayValue() + ":" + minutos.getDisplayValue() 
+             + " " + dia.getValorDelDisplay() + "/" + mes.getValorDelDisplay() 
+             + "/" + anno.getValorDelDisplay();
+        }
+        else if (horaMostrar == true && fechaMostrar == false) {
+            momento = horas.getDisplayValue() + ":" + minutos.getDisplayValue();
+        }
+        else if (horaMostrar == false && fechaMostrar == true) {
             momento = dia.getValorDelDisplay() + "/" + mes.getValorDelDisplay() 
                 + "/" + anno.getValorDelDisplay();
         }

@@ -10,4 +10,6 @@ comment2.target=void\ setMomento(int,\ int,\ int,\ int,\ int)
 comment2.text=\n\ Metodo\ avanzarMomento\n
 comment3.params=
 comment3.target=java.lang.String\ getMomento()
-numComments=4
+comment4.params=horaMostrar\ fechaMostrar
+comment4.target=java.lang.String\ getMomento(boolean,\ boolean)
+numComments=5
