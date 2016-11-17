@@ -107,7 +107,7 @@ public class DisplayHoraYFecha
              + "/" + anno.getValorDelDisplay();
         }
         else if (mostrarHora == true && mostrarFecha == false) {
-            return horas.getDisplayValue() + ":" + minutos.getDisplayValue();
+            momento = horas.getDisplayValue() + ":" + minutos.getDisplayValue();
         }
         else if (mostrarHora == false && mostrarFecha == true) {
             momento = dia.getValorDelDisplay() + "/" + mes.getValorDelDisplay() 
