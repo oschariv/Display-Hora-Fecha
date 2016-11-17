@@ -1,0 +1,70 @@
+public void setMomentoVersion2(int nuevaHora, int nuevoMinuto, 
+	                           int nuevoDia, int nuevoMes, int nuevoAnyo)
+	{
+		int contador = 0;
+
+		if (nuevaHora >= 0 && nuevaHora < 24) {
+			contador = contador + 1;
+		}
+
+		if (nuevoMinuto >= 0 && nuevoMinuto < 60) {
+			contador = contador + 1;
+		}
+
+		if (nuevoDia > 0 && nuevoDia < 31) {
+			contador = contador + 1;
+		}
+
+		if (nuevoMes > 0 && nuevoMes < 13) {
+			contador = contador + 1;
+		}
+
+		if (nuevoAnyo > 0 && nuevoAnyo < 100) {
+			contador = contador + 1;
+		}
+
+		if (contador == 5){
+			minutos.setValue(nuevoMinuto);
+			horas.setValue(nuevaHora);
+			dia.setValor(nuevoDia);
+			mes.setValor(nuevoMes);
+			anno.setValor(nuevoAnyo);
+		}
+		
+	}
+
+
+
+
+
+	
+public void setMomentoVersion3 (int nuevaHora, int nuevoMinuto, 
+		                         int nuevoDia, int nuevoMes, int nuevoAnyo)
+	{
+		boolean seDebeCambiarElMomentoTemporal = true;
+
+		if (nuevaHora < 0 || nuevaHora > 24) {
+		  	seDebeCambiarElMomentoTemporal = false
+		}
+		if (nuevoMinuto < 0 || nuevoMinuto > 60) {
+		  	seDebeCambiarElMomentoTemporal = false
+		}
+		if (nuevoDia<1 || nuevoDia > 30) {
+		  	seDebeCambiarElMomentoTemporal = false
+		}
+		if (nuevoMes < 1 || nuevoMes > 12) {
+		  	seDebeCambiarElMomentoTemporal = false
+		}
+		if (nuevoAnyo < 1 || nuevoAnyo > 99) {
+		  	seDebeCambiarElMomentoTemporal = false
+		}
+
+		if (seDebeCambiarElMomentoTemporal == true)
+		  	minutos.setValue(nuevoMinuto);
+		  	horas.setValue(nuevaHora);
+		  	dia.setValor(nuevoDia);
+		  	mes.setValor(nuevoMes);
+		  	anyo.setValor(nuevoAnyo);
+		}
+    
+  	}
