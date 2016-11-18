@@ -84,27 +84,8 @@ public class DisplayHoraYFecha
     }
         
     public String getMomento()
-    {
-        String momento = "";
-        String displayHora = horas.getDisplayValue() + ":" + 
-                             minutos.getDisplayValue();
-                             
-        String displayFecha = dia.getValorDelDisplay() + "/" + 
-                              mes.getValorDelDisplay() + "/" + 
-                              anno.getValorDelDisplay();
-                              
-        if (mostrarHora  && mostrarFecha) {
-            momento = displayHora + " " + displayFecha;
-        }
-        else if (mostrarHora && !mostrarFecha) {
-            momento = displayHora;
-        }
-        else if (!mostrarHora && mostrarFecha) {
-            momento = displayFecha;
-        }
-        
-        
-        return momento; 
+    {    
+        return getMomento(mostrarHora, mostrarFecha); 
     }
     
     public String getMomento(boolean horaMostrar, boolean fechaMostrar)
