@@ -67,15 +67,15 @@ public class DisplayHoraYFecha
      * Metodo avanzarMomento
      */
     public void setMomento(int nuevaHora, int nuevoMinuto, 
-	                       int nuevoDia, int nuevoMes, int nuevoAnyo)
+                           int nuevoDia, int nuevoMes, int nuevoAnyo)
     {
         if (nuevaHora >= 0 && nuevaHora < 24 && 
-		    nuevoMinuto >= 0 && nuevoMinuto < 60 && 
-		    nuevoDia > 0 && nuevoDia < 31 &&
-		    nuevoMes > 0 && nuevoMes < 13 && 
-		    nuevoAnyo > 0 && nuevoAnyo < 100) {
+            nuevoMinuto >= 0 && nuevoMinuto < 60 && 
+            nuevoDia > 0 && nuevoDia < 31 &&
+            nuevoMes > 0 && nuevoMes < 13 && 
+            nuevoAnyo > 0 && nuevoAnyo < 100) {
             
-		    minutos.setValue(nuevoMinuto);
+            minutos.setValue(nuevoMinuto);
             horas.setValue(nuevaHora);
             dia.setValor(nuevoDia);
             mes.setValor(nuevoMes);
@@ -85,23 +85,22 @@ public class DisplayHoraYFecha
         
     public String getMomento()
     {
-        String momento;
+        String momento = "";
+        String displayHora = horas.getDisplayValue() + ":" + 
+                             minutos.getDisplayValue();
+        String displayFecha = dia.getValorDelDisplay() + "/" + 
+                              mes.getValorDelDisplay() + "/" + 
+                              anno.getValorDelDisplay();
+        if (mostrarHora  && mostrarFecha) {
+            momento = displayHora + " " + displayFecha;
+        }
+        else if (mostrarHora && !mostrarFecha) {
+            momento = displayHora;
+        }
+        else if (!mostrarHora && mostrarFecha) {
+            momento = displayFecha;
+        }
         
-        if (mostrarHora == true && mostrarFecha == true) {
-            momento = horas.getDisplayValue() + ":" + minutos.getDisplayValue() 
-             + " " + dia.getValorDelDisplay() + "/" + mes.getValorDelDisplay() 
-             + "/" + anno.getValorDelDisplay();
-        }
-        else if (mostrarHora == true && mostrarFecha == false) {
-            momento = horas.getDisplayValue() + ":" + minutos.getDisplayValue();
-        }
-        else if (mostrarHora == false && mostrarFecha == true) {
-            momento = dia.getValorDelDisplay() + "/" + mes.getValorDelDisplay() 
-                + "/" + anno.getValorDelDisplay();
-        }
-        else{
-            momento = "";
-        }
         
         return momento; 
     }

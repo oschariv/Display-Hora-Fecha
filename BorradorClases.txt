@@ -1,3 +1,5 @@
+//Distintas versiones para el metodo setMomento().
+
 public void setMomentoVersion2(int nuevaHora, int nuevoMinuto, 
 	                           int nuevoDia, int nuevoMes, int nuevoAnyo)
 	{
@@ -68,3 +70,5 @@ public void setMomentoVersion3 (int nuevaHora, int nuevoMinuto,
 		}
     
   	}
+
+  	
