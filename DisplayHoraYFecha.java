@@ -88,9 +88,11 @@ public class DisplayHoraYFecha
         String momento = "";
         String displayHora = horas.getDisplayValue() + ":" + 
                              minutos.getDisplayValue();
+                             
         String displayFecha = dia.getValorDelDisplay() + "/" + 
                               mes.getValorDelDisplay() + "/" + 
                               anno.getValorDelDisplay();
+                              
         if (mostrarHora  && mostrarFecha) {
             momento = displayHora + " " + displayFecha;
         }
@@ -107,22 +109,22 @@ public class DisplayHoraYFecha
     
     public String getMomento(boolean horaMostrar, boolean fechaMostrar)
     {
-        String momento;
+        String momento = "";
+        String displayHora = horas.getDisplayValue() + ":" + 
+                             minutos.getDisplayValue();
+                             
+        String displayFecha = dia.getValorDelDisplay() + "/" + 
+                              mes.getValorDelDisplay() + "/" + 
+                              anno.getValorDelDisplay();
         
-        if (horaMostrar == true && fechaMostrar == true) {
-            momento = horas.getDisplayValue() + ":" + minutos.getDisplayValue() 
-             + " " + dia.getValorDelDisplay() + "/" + mes.getValorDelDisplay() 
-             + "/" + anno.getValorDelDisplay();
+        if (horaMostrar  && fechaMostrar) {
+            momento = displayHora + " " + displayFecha;
         }
-        else if (horaMostrar == true && fechaMostrar == false) {
-            momento = horas.getDisplayValue() + ":" + minutos.getDisplayValue();
+        else if (horaMostrar && !fechaMostrar) {
+            momento = displayHora;
         }
-        else if (horaMostrar == false && fechaMostrar == true) {
-            momento = dia.getValorDelDisplay() + "/" + mes.getValorDelDisplay() 
-                + "/" + anno.getValorDelDisplay();
-        }
-        else{
-            momento = "";
+        else if (!horaMostrar && fechaMostrar) {
+            momento = displayFecha;
         }
         
         return momento; 
